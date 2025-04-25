@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RealmCommunity</title>
+  <link rel="stylesheet" href="static/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="icon" href="https://cdn.discordapp.com/icons/1347847747377827841/dfd12546591920b2022953c3e5ce4cdf.png" type="image/png" />
+  <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo-wrapper">
+          <img src="https://cdn.discordapp.com/icons/1347847747377827841/dfd12546591920b2022953c3e5ce4cdf.png" alt="RealmCommunity Logo" class="logo-img">
+          <h1 class="logo">RealmCommunity</h1>
+        </div>
+        <nav class="nav">
+          <a href="#about">О нас</a>
+          <a href="#features">Что у нас есть</a>
+          <a href="#rpg">Наш RPG-бот</a>
+          <a href="#stats">Активность</a>
+          <a href="#join">Присоединиться</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section id="about" class="hero-section">
+      <div class="container">
+        <div class="hero-wrapper">
+          <div class="hero-content">
+            <h2>RealmCommunity — <span class="highlight">твой цифровой дом</span></h2>
+            <p class="subtitle">Где общение и игры становятся приключением</p>
+            <p>
+              Мы создали уютное пространство для тех, кто любит проводить время в хорошей компании. 
+              Здесь нет строгих правил — только дружеская атмосфера, смех и совместные приключения!
+            </p>
+            <div class="hero-buttons">
+              <a href="#join" class="cta-button">Присоединиться <i class="fas fa-arrow-right"></i></a>
+              <a href="#rpg" class="secondary-button">Узнать про RPG <i class="fas fa-dragon"></i></a>
+            </div>
+          </div>
+          
+          <div class="hero-image">
+            <img src="https://cdn.discordapp.com/attachments/1347955628320231468/1349061662023483412/3.png?ex=680d0e94&is=680bbd14&hm=491d08bb7331fcf9b50edda195e9e2eed3f0791444390fc30c24da02d426bd62&" alt="Realm Community" class="hero-img">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+    <section id="features" class="features-section">
+      <div class="container">
+        <h2 class="section-title">Что делает нас особенными?</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-heart"></i></div>
+            <h3>Ламповая атмосфера</h3>
+            <p>Уютное место, где каждый чувствует себя как дома</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-users"></i></div>
+            <h3>Живое общение</h3>
+            <p>Всегда найдется, с кем поболтать на любые темы</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-gamepad"></i></div>
+            <h3>Совместные игры</h3>
+            <p>Разговоры и веселые игровые вечера</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-diagram-project"></i></div>
+            <h3>Проекты</h3>
+            <p>Создание новых, интересных и эксклюзивных проектов специально для участников</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="rpg" class="rpg-section">
+      <div class="container">
+        <div class="rpg-content">
+          <div class="rpg-text">
+            <h2 class="section-title">Наш уникальный <span class="highlight">RPG-бот</span></h2>
+            <p>Погрузись в мир приключений с нашим собственным RPG-ботом! Веселись, участвуй в битвах и получай награды.</p>
+            <ul class="rpg-features">
+              <li><i class="fas fa-check"></i> Система прокачки персонажа</li>
+              <li><i class="fas fa-check"></i> Эпические PvE и PvP сражения</li>
+              <li><i class="fas fa-check"></i> Уникальные предметы и достижения</li>
+              <li><i class="fas fa-check"></i> Развитие проекта</li>
+            </ul>
+          </div>
+          <div class="rpg-image">
+            <img src="https://rpgapi.coincollect270.workers.dev/Infernord/idle.gif" alt="RPG Bot" class="rpg-gif">
+            <div class="rpg-badge">Эксклюзивно на RealmCommunity</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="stats" class="stats-section">
+      <div class="container">
+        <h2 class="section-title">Наша активность</h2>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value" id="members-count">{{ counters.members }}+</div>
+            <div class="stat-label">Участников</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="online-count">{{ counters.online }}+</div>
+            <div class="stat-label">Онлайн сейчас</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="messages-count">{{ counters.messages }}+</div>
+            <div class="stat-label">Сообщений в день</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="rpg-count">{{ counters.rpg_players }}+</div>
+            <div class="stat-label">Игроков в RPG</div>
+          </div>
+        </div>
+        <p class="update-time">Обновлено: <span id="last-updated">{{ counters.last_updated }}</span></p>
+      </div>
+    </section>
+
+    <section id="join" class="join-section">
+      <div class="container">
+        <div class="join-content">
+          <h2 class="section-title">Готов присоединиться?</h2>
+          <p>Нажми на кнопку ниже и стань частью нашего дружного сообщества!</p>
+          <a href="https://discord.gg/VXzSMg6Bzj" class="cta-button pulse" target="_blank">
+            <i class="fab fa-discord"></i> Войти на сервер
+          </a>
+          <div class="join-note">
+            <i class="fas fa-info-circle"></i> После входа не забудь прочитать #правила и #welcome
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="https://cdn.discordapp.com/icons/1347847747377827841/dfd12546591920b2022953c3e5ce4cdf.png" alt="RealmCommunity Logo">
+          <span>RealmCommunity</span>
+        </div>
+        <div class="footer-links">
+          <a href="#"><i class="fab fa-discord"></i></a>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        &copy; 2025 RealmCommunity. Все права похищены.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
